@@ -1,0 +1,16 @@
+.animate-card:hover {
+    animation: active_boxStyle 2s linear infinite;
+}
+@keyframes active_boxStyle {
+    0%{
+        box-shadow: 0 0 0 #fff;
+    }
+
+    50%{
+        box-shadow: 0 0 10px #fff;
+    }
+
+    100%{
+        box-shadow: 0 0 0 #fff;
+    }
+}

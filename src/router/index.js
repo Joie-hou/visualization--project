@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
+        redirect: '/tzgl',
         name: 'homePage',
         components: {
             default: () => import('@/views/index'),

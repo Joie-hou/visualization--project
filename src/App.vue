@@ -25,10 +25,14 @@ export default {
 </script>
 
 <style>
+@import '@/assets/css/public.css';
 html, body {
   margin: 0;
   height: 100%;
   width: 100%;
+}
+div {
+  box-sizing: border-box;
 }
 #app {
   height: 100%;

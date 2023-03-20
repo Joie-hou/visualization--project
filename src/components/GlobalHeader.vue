@@ -104,9 +104,12 @@ export default {
         flex: 1;
         display: flex;
         align-items: center;
-        margin-bottom: 40px;
+        padding-bottom: 50px;
+        padding-top: 10px;
         .router-item {
             padding: 0 20px;
+            display: flex;
+            justify-content: center;
             a {
                 display: flex;
                 align-items: center;
