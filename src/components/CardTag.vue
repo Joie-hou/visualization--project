@@ -54,6 +54,8 @@ export default {
 </script>
 <style lang="scss">
 .card-tag-container {
+    position: relative;
+    z-index: 10;
     background-size: 100% 100%;
     display: flex;
     align-items: center;

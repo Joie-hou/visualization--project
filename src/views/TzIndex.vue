@@ -3,7 +3,7 @@
         <div class="child-item child-left">
             <div class="animate-card">
                 <card-tag :conBaImg="tzglTitleTag" @conClick="testGET()">
-                    建筑安装工程费
+                    施工准入
                 </card-tag>
                 <div class="chart-container" ref="JAFContainer"></div>
             </div>
@@ -38,7 +38,7 @@
 </template>
 <script>
 import CardTag from '@/components/CardTag.vue'
-import tzglTitleTag from '@/assets/tzgl/title_bg.png'
+import tzglTitleTag from '@/assets/img/tzgl/title_bg.png'
 export default {
     data() {
         return {

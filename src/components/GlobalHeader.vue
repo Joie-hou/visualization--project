@@ -41,12 +41,12 @@
     </div>
 </template>
 <script>
-import tzglTop from "@/assets/header/tzglTop.png"
-import gcglTop from "@/assets/header/gcglTop.png"
-import aqglTop from "@/assets/header/aqglTop.png"
-import zjglTop from "@/assets/header/zjglTop.png"
-import zhbgTop from "@/assets/header/zhbgTop.png"
-import jsglTop from "@/assets/header/jsglTop.png"
+import tzglTop from "@/assets/img/header/tzglTop.png"
+import gcglTop from "@/assets/img/header/gcglTop.png"
+import aqglTop from "@/assets/img/header/aqglTop.png"
+import zjglTop from "@/assets/img/header/zjglTop.png"
+import zhbgTop from "@/assets/img/header/zhbgTop.png"
+import jsglTop from "@/assets/img/header/jsglTop.png"
 export default {
     data() {
         return {
@@ -92,7 +92,7 @@ export default {
 .global-header-container {
     position: relative;
     width: 100%;
-    height: 100px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,7 +104,7 @@ export default {
         flex: 1;
         display: flex;
         align-items: center;
-        padding-bottom: 50px;
+        padding-bottom: 40px;
         padding-top: 10px;
         .router-item {
             padding: 0 20px;
@@ -115,12 +115,12 @@ export default {
                 align-items: center;
                 justify-content: center;
                 color: #fff;
-                font-size: 25px;
+                font-size: 24px;
                 text-decoration: none;
             }
             .router-link-active {
                 color: aqua;
-                font-size: 27px;
+                // font-size: 27px;
             }
         }
     }
@@ -139,6 +139,7 @@ export default {
     }
     .header-center {
         margin: 0;
+        padding: 0;
         display: flex;
         justify-content: center;
         align-items: center;
