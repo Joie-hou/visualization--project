@@ -1,20 +1,14 @@
 <template>
-    <div class="global-header-container" ref="globalHeader" :style="{ backgroundImage: 'url('+currentBackImg+')' }">
+    <div ref="globalHeader" class="global-header-container" :style="{ backgroundImage: 'url(' + currentBackImg + ')' }">
         <div class="header-item header-left">
             <div class="router-item left-router">
-                <router-link to="/tzgl">
-                    投资管理
-                </router-link>
+                <router-link to="/tzgl"> 投资管理 </router-link>
             </div>
             <div class="router-item left-router">
-                <router-link to="/gcgl">
-                    工程管理
-                </router-link>
+                <router-link to="/gcgl"> 工程管理 </router-link>
             </div>
             <div class="router-item left-router">
-                <router-link to="/aqgl">
-                    安全管理
-                </router-link>
+                <router-link to="/aqgl"> 安全管理 </router-link>
             </div>
         </div>
         <div class="header-item header-center">
@@ -22,71 +16,60 @@
         </div>
         <div class="header-item header-right">
             <div class="router-item right-router">
-                <router-link to="/zjgl">
-                    质检管理
-                </router-link>
+                <router-link to="/zjgl"> 质检管理 </router-link>
             </div>
             <div class="router-item right-router">
-                <router-link to="/zhbg">
-                    综合办公
-                </router-link>
+                <router-link to="/zhbg"> 综合办公 </router-link>
             </div>
             <div class="router-item right-router">
-                <router-link to="/jsgl">
-                    技术管理
-                </router-link>
+                <router-link to="/jsgl"> 技术管理 </router-link>
             </div>
         </div>
-        
     </div>
 </template>
 <script>
-import tzglTop from "@/assets/img/header/tzglTop.png"
-import gcglTop from "@/assets/img/header/gcglTop.png"
-import aqglTop from "@/assets/img/header/aqglTop.png"
-import zjglTop from "@/assets/img/header/zjglTop.png"
-import zhbgTop from "@/assets/img/header/zhbgTop.png"
-import jsglTop from "@/assets/img/header/jsglTop.png"
+import tzglTop from "@/assets/img/header/tzglTop.png";
+import gcglTop from "@/assets/img/header/gcglTop.png";
+import aqglTop from "@/assets/img/header/aqglTop.png";
+import zjglTop from "@/assets/img/header/zjglTop.png";
+import zhbgTop from "@/assets/img/header/zhbgTop.png";
+import jsglTop from "@/assets/img/header/jsglTop.png";
 export default {
     data() {
         return {
-            currentBackImg: '',
+            currentBackImg: "",
             tzglTop,
             gcglTop,
             aqglTop,
             zjglTop,
             zhbgTop,
             jsglTop,
-        }
+        };
     },
     watch: {
         "$route.name": {
             deep: true,
-            handler: function(newVal, oldVal) {
+            handler: function (newVal, oldVal) {
                 console.log(newVal, oldVal);
-                    if (newVal === 'tzgl' || newVal === 'homePage') {
-                        this.currentBackImg = this.tzglTop
-                    } else if (newVal === 'gcgl') {
-                        this.currentBackImg = this.gcglTop
-                    } else if (newVal === 'aqgl') {
-                        this.currentBackImg = this.aqglTop
-                    } else if (newVal === 'zjgl') {
-                        this.currentBackImg = this.zjglTop
-                    }else if (newVal === 'zhbg') {
-                        this.currentBackImg = this.zhbgTop
-                    } else if (newVal === 'jsgl') {
-                        this.currentBackImg = this.jsglTop
-                    }
-            }
-        }
+                if (newVal === "tzgl" || newVal === "homePage") {
+                    this.currentBackImg = this.tzglTop;
+                } else if (newVal === "gcgl") {
+                    this.currentBackImg = this.gcglTop;
+                } else if (newVal === "aqgl") {
+                    this.currentBackImg = this.aqglTop;
+                } else if (newVal === "zjgl") {
+                    this.currentBackImg = this.zjglTop;
+                } else if (newVal === "zhbg") {
+                    this.currentBackImg = this.zhbgTop;
+                } else if (newVal === "jsgl") {
+                    this.currentBackImg = this.jsglTop;
+                }
+            },
+        },
     },
-    mounted() {
-        
-    },
-    methods: {
-
-    }
-}
+    mounted() {},
+    methods: {},
+};
 </script>
 <style lang="scss">
 .global-header-container {
@@ -127,14 +110,14 @@ export default {
     .header-left {
         margin-left: 20px;
         .router-item {
-            border-left: 1px solid #7BF0FF;
+            border-left: 1px solid #7bf0ff;
         }
     }
     .header-right {
         margin-right: 20px;
         justify-content: flex-end;
         .router-item {
-            border-right: 1px solid #7BF0FF;
+            border-right: 1px solid #7bf0ff;
         }
     }
     .header-center {

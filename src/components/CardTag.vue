@@ -1,14 +1,16 @@
 <template>
-    <div class="card-tag-container" 
-    @click="clickHandler"
-    :style="{
-        width: conWidth + 'px',
-        height: conHeight + 'px',
-        paddingLeft: conPdLeft + 'px',
-        fontSize: conFoSize + 'px',
-        color: conColor,
-        backgroundImage: 'url('+ conBaImg + ')'
-    }">
+    <div
+        class="card-tag-container"
+        :style="{
+            width: conWidth + 'px',
+            height: conHeight + 'px',
+            paddingLeft: conPdLeft + 'px',
+            fontSize: conFoSize + 'px',
+            color: conColor,
+            backgroundImage: 'url(' + conBaImg + ')',
+        }"
+        @click="clickHandler"
+    >
         <slot>卡片标题</slot>
     </div>
 </template>
@@ -17,40 +19,38 @@ export default {
     props: {
         conWidth: {
             type: Number || String,
-            default: 300
+            default: 300,
         },
         conHeight: {
             type: Number || String,
-            default: 60
+            default: 60,
         },
         conPdLeft: {
             type: Number || String,
-            default: 40
+            default: 40,
         },
         conFoSize: {
             type: Number || String,
-            default: 20
+            default: 20,
         },
         conColor: {
             type: String,
-            default: '#fff'
+            default: "#fff",
         },
         conBaImg: {
             type: String,
-            default: ''
-        }
+            default: "",
+        },
     },
     data() {
-        return {
-
-        }
+        return {};
     },
     methods: {
         clickHandler() {
-            this.$emit('conClick')
-        }
-    }
-}
+            this.$emit("conClick");
+        },
+    },
+};
 </script>
 <style lang="scss">
 .card-tag-container {
