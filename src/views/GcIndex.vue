@@ -5,7 +5,7 @@
                 
             </div>
             <div class="animate-card">
-                <card-tag :conWidth="200" :conHeight="40" :conBaImg="tzglTitleTag" @conClick="testGET()">
+                <card-tag :conWidth="200" :conHeight="40" :conBaImg="gcglTitleTag" @conClick="testGET()">
                     施工准入
                 </card-tag>
                 <div class="card-total-count">
@@ -23,7 +23,7 @@
                 <div class="chart-container" ref="SGZRContainer" style="position: relative; height: 70%;"></div>
             </div>
             <div class="animate-card">
-                <card-tag :conBaImg="tzglTitleTag" @conClick="testGET()">
+                <card-tag :conWidth="200" :conHeight="40" :conBaImg="gcglTitleTag" @conClick="testGET()">
                     劳务概况
                 </card-tag>
                 <div class="chart-container" ref="GJQContainer"></div>
@@ -31,7 +31,7 @@
         </div>
         <div class="child-item child-middle">
             <div class="animate-card" style="height: 20%;">
-                <card-tag :conWidth="200" :conHeight="40" :conBaImg="tzglTitleTag" @conClick="testGET()">
+                <card-tag :conWidth="200" :conHeight="40" :conBaImg="gcglTitleTag" @conClick="testGET()">
                     招标采购
                 </card-tag>
                 <div class="card-total-count">
@@ -49,7 +49,7 @@
                 <div class="chart-container" ref="ZBCGContainer" style=""></div>
             </div>
             <div class="animate-card" style="height: 20%;">
-                <card-tag :conWidth="200" :conHeight="40" :conBaImg="tzglTitleTag" @conClick="testGET()">
+                <card-tag :conWidth="200" :conHeight="40" :conBaImg="gcglTitleTag" @conClick="testGET()">
                     合同管理
                 </card-tag>
                 <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: space-between;">
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="animate-card" style="height: 30%;">
-                <card-tag :conWidth="200" :conHeight="40" :conBaImg="tzglTitleTag" @conClick="testGET()">
+                <card-tag :conWidth="200" :conHeight="40" :conBaImg="gcglTitleTag" @conClick="testGET()">
                     计量支付
                 </card-tag>
                 <div class="card-total-count">
@@ -83,7 +83,7 @@
                 <div class="chart-container" ref="JLZFContainer"></div>
             </div>
             <div class="animate-card" style="height: 38%;">
-                <card-tag :conWidth="200" :conHeight="40" :conBaImg="tzglTitleTag" @conClick="testGET()">
+                <card-tag :conWidth="200" :conHeight="40" :conBaImg="gcglTitleTag" @conClick="testGET()">
                     工程进度
                 </card-tag>
                 <div class="chart-container" ref="GCJDContainerTotal" style="height: 66px; position: relative;"></div>
@@ -95,7 +95,7 @@
                 
             </div>
             <div class="animate-card">
-                <card-tag :conWidth="200" :conHeight="40" :conBaImg="tzglTitleTag" @conClick="testGET()">
+                <card-tag :conWidth="200" :conHeight="40" :conBaImg="gcglTitleTag" @conClick="testGET()">
                     工程档案
                 </card-tag>
                 <div class="card-total-count">
@@ -113,7 +113,7 @@
                 <div class="chart-container" ref="GCDAContainer" style=""></div>
             </div>
             <div class="animate-card">
-                <card-tag :conWidth="200" :conHeight="40" :conBaImg="tzglTitleTag" @conClick="testGET()">
+                <card-tag :conWidth="200" :conHeight="40" :conBaImg="gcglTitleTag" @conClick="testGET()">
                     竣工决算
                 </card-tag>
                 <div class="chart-container" ref="JGJSContainerLeft" style="width: 50%;"></div>
@@ -124,11 +124,11 @@
 </template>
 <script>
 import CardTag from '@/components/CardTag.vue'
-import tzglTitleTag from '@/assets/img/gcgl/title_bg.png'
+import gcglTitleTag from '@/assets/img/gcgl/title_bg.png'
 export default {
     data() {
         return {
-            tzglTitleTag
+            gcglTitleTag
         }
     },
     components: {
