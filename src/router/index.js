@@ -1,64 +1,63 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/',
-        redirect: '/tzgl',
-        name: 'homePage',
+        path: "/",
+        redirect: "/tzgl",
+        name: "homePage",
         components: {
-            default: () => import('@/views/index'),
-        }
+            default: () => import("@/views/index"),
+        },
     },
     {
-        path: '/tzgl',
-        name: 'tzgl',
+        path: "/tzgl",
+        name: "tzgl",
         components: {
-            default: () => import('@/views/TzIndex'),
-        }
+            default: () => import("@/views/TzIndex"),
+        },
     },
     {
-        path: '/gcgl',
-        name: 'gcgl',
+        path: "/gcgl",
+        name: "gcgl",
         components: {
-            default: () => import('@/views/GcIndex'),
-        }
+            default: () => import("@/views/GcIndex"),
+        },
     },
     {
-        path: '/aqgl',
-        name: 'aqgl',
+        path: "/aqgl",
+        name: "aqgl",
         components: {
-            default: () => import('@/views/AqIndex'),
-        }
+            default: () => import("@/views/AqIndex"),
+        },
     },
     {
-        path: '/zjgl',
-        name: 'zjgl',
+        path: "/zjgl",
+        name: "zjgl",
         components: {
-            default: () => import('@/views/ZjIndex'),
-        }
+            default: () => import("@/views/ZjIndex"),
+        },
     },
     {
-        path: '/zhbg',
-        name: 'zhbg',
+        path: "/zhbg",
+        name: "zhbg",
         components: {
-            default: () => import('@/views/ZhIndex'),
-        }
+            default: () => import("@/views/ZhIndex"),
+        },
     },
     {
-        path: '/jsgl',
-        name: 'jsgl',
+        path: "/jsgl",
+        name: "jsgl",
         components: {
-            default: () => import('@/views/JsIndex'),
-        }
-    }
-]
+            default: () => import("@/views/JsIndex"),
+        },
+    },
+];
 
 const router = new VueRouter({
-    mode: 'history',
-    routes: routes
+    mode: "history",
+    routes: routes,
+});
 
-})
-
-export default router
+export default router;
