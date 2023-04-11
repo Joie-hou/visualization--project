@@ -397,7 +397,7 @@ export default {
 <style lang="scss">
 .tzgl-container {
     display: flex;
-    height: calc(100% - 100px);
+    height: calc(100% - 70px);
     padding: 0 20px 20px;
     .child-item {
         flex: 1;

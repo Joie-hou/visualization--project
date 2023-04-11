@@ -84,6 +84,21 @@
                         <card-tag :con-width="330" :con-height="50" :con-ba-img="aqglTitleTag" @conClick="testGET()">
                             风险分级管控及隐患排查治理
                         </card-tag>
+                        <div
+                            ref="FXbarContainer"
+                            class="chart-container"
+                            style="position: relative; width: 404px; height: 270px; margin-top: 10px"
+                        ></div>
+                        <div class="bottom-echarts">
+                            <div class="bottom-echarts_item">
+                                <div class="echarts-title"></div>
+                                <div
+                                    ref="FXBPContainer"
+                                    class="chart-container"
+                                    style="position: relative; width: 404px; height: 270px; margin-top: 10px"
+                                ></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -92,6 +107,11 @@
                     <card-tag :con-width="230" :con-height="50" :con-ba-img="aqglTitleTag" @conClick="testGET()">
                         网格化管理
                     </card-tag>
+                    <div
+                        ref="WGHContainer"
+                        class="chart-container"
+                        style="position: relative; height: calc(100% - 150px); margin-top: 10px"
+                    ></div>
                 </div>
                 <div class="animate-card" style="width: calc(50% - 5px); height: 100%">
                     <card-tag :con-width="230" :con-height="50" :con-ba-img="aqglTitleTag" @conClick="testGET()">
@@ -232,7 +252,10 @@ export default {
     created() {
         this.tableData = this.tableData1;
     },
-    mounted() {},
+    mounted() {
+        this.echartsWGH();
+        this.echartsFXbar();
+    },
     methods: {
         // 安全教育培训/考试 列表切换
         changeList(value) {
@@ -263,6 +286,409 @@ export default {
                     break;
             }
         },
+        // 网格化管理
+        echartsWGH() {
+            let xList = [
+                "总监办一分部",
+                "总监办二分部",
+                "路基1分部",
+                "路基2分部",
+                "路基3分部",
+                "路基4分部",
+                "路基5分部",
+            ];
+            let yList1 = ["13", "6", "14", "10", "10"];
+            let yList2 = ["0", "0", "11", "6", "14", "10", "7"];
+            let yList3 = ["19", "30", "0", "0", "1", "0", "0"];
+            let yList4 = ["0", "0", "12", "5", "14", "10", "1"];
+            let yList5 = ["0", "0", "202", "180", "634", "332", "509"];
+            let options = {
+                legend: {
+                    icon: "rect",
+                    right: "5%",
+                    top: 5,
+                    itemWidth: 12,
+                    itemHeight: 12,
+                    // data: ["网格数", "安全员数", "监理员数", "网格员数", "施工人员数"],
+                    textStyle: {
+                        color: "#fff",
+                        fontSize: 18,
+                    },
+                },
+                tooltip: {
+                    trigger: "axis",
+                    borderWidth: 0,
+                    padding: [5, 10],
+                    textStyle: {
+                        fontSize: 16,
+                    },
+                    rich: {
+                        value: {
+                            fontSize: 16,
+                        },
+                    },
+                },
+                grid: {
+                    top: "18%",
+                    left: "10%",
+                    right: "7%",
+                    bottom: "15%",
+                    //   containLabel: false
+                },
+                toolbox: {
+                    show: false,
+                },
+                xAxis: {
+                    type: "category",
+                    boundaryGap: false, //坐标轴两边留白
+                    data: xList,
+                    axisLabel: {
+                        // textStyle: {
+                        color: "#D6E1FF",
+                        fontSize: 16,
+                        // },
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: "#9EA3B4",
+                            opacity: 0.3,
+                        },
+                    },
+                    axisTick: {
+                        show: false,
+                    },
+                },
+                yAxis: [
+                    {
+                        type: "value",
+                        splitNumber: 4,
+                        splitLine: {
+                            lineStyle: {
+                                color: "#9EA3B4",
+                                opacity: 0.3,
+                            },
+                        },
+                        axisLabel: {
+                            // textStyle: {
+                            color: "#D6E1FF",
+                            fontSize: 16,
+                            // },
+                        },
+                    },
+                ],
+                series: [
+                    {
+                        name: "网格数",
+                        type: "line",
+                        // symbol: 'none',
+                        itemStyle: {
+                            // normal: {
+                            color: "#1b7cf2",
+                            lineStyle: {
+                                color: "#1b7cf2",
+                                width: 2,
+                            },
+                            // },
+                        },
+                        areaStyle: {
+                            //区域填充样式
+                            color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(27, 124, 242, 0.1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(27, 124, 242, 0.5)",
+                                },
+                            ]),
+                        },
+                        toolbox: {
+                            show: false,
+                        },
+                        data: yList1,
+                    },
+                    {
+                        name: "安全员数",
+                        type: "line",
+                        // symbol: 'none',
+                        itemStyle: {
+                            // normal: {
+                            color: "#3ac889",
+                            lineStyle: {
+                                color: "#3ac889",
+                                width: 2,
+                            },
+                            // },
+                        },
+                        areaStyle: {
+                            //区域填充样式
+                            color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(58, 200, 137, 0.1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(58, 200, 137, 0.5)",
+                                },
+                            ]),
+                        },
+                        toolbox: {
+                            show: false,
+                        },
+                        data: yList2,
+                    },
+                    {
+                        name: "监理员数",
+                        type: "line",
+                        // symbol: 'none',
+                        itemStyle: {
+                            // normal: {
+                            color: "#f69c1f",
+                            lineStyle: {
+                                color: "#f69c1f",
+                                width: 2,
+                            },
+                            // },
+                        },
+                        areaStyle: {
+                            //区域填充样式
+                            color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(246, 156, 31, 0.1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(246, 156, 31, 0.5)",
+                                },
+                            ]),
+                        },
+                        toolbox: {
+                            show: false,
+                        },
+                        data: yList3,
+                    },
+                    {
+                        name: "网格员数",
+                        type: "line",
+                        // symbol: 'none',
+                        itemStyle: {
+                            // normal: {
+                            color: "#ec2cd9",
+                            lineStyle: {
+                                color: "#ec2cd9",
+                                width: 2,
+                            },
+                            // },
+                        },
+                        areaStyle: {
+                            //区域填充样式
+                            color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(236, 44, 217, 0.1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(236, 44, 217, 0.5)",
+                                },
+                            ]),
+                        },
+                        toolbox: {
+                            show: false,
+                        },
+                        data: yList4,
+                    },
+                    {
+                        name: "施工人员数",
+                        type: "line",
+                        // symbol: 'none',
+                        itemStyle: {
+                            // normal: {
+                            color: "#f44e45",
+                            lineStyle: {
+                                color: "#f44e45",
+                                width: 2,
+                            },
+                            // },
+                        },
+                        areaStyle: {
+                            //区域填充样式
+                            color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(244, 78, 69, 0.1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(244, 78, 69, 0.5)",
+                                },
+                            ]),
+                        },
+                        toolbox: {
+                            show: false,
+                        },
+                        data: yList5,
+                    },
+                ],
+            };
+            let myChart = this.$echarts.init(this.$refs.WGHContainer);
+            myChart.showLoading({
+                maskColor: "rgba(0, 0, 0, 0)",
+                fontSize: 30,
+                textColor: "#fff",
+            });
+            setTimeout(() => {
+                myChart.hideLoading();
+                myChart.setOption(options);
+            }, 1000);
+        },
+        // 风险分级管控及隐患排查治理
+        echartsFXbar() {
+            let xList = ["路基1分部", "路基2分部", "路基3分部", "路基4分部", "路基5分部"];
+            let yData1 = [0, 0, 0, 0, 0];
+            let yData2 = [28, 23, 10, 18, 48];
+            let yData3 = [100, 100, 100, 100, 100];
+            let options = {
+                legend: {
+                    right: "left",
+                    textStyle: {
+                        color: "#fff",
+                        fontSize: 18,
+                    },
+
+                    show: true,
+                },
+                tooltip: {
+                    trigger: "axis",
+                    axisPointer: {
+                        type: "line",
+                    },
+                    textStyle: {
+                        fontSize: 16,
+                    },
+                },
+                grid: {
+                    top: "18%",
+                    left: "7%",
+                    right: "15%",
+                    bottom: "10%",
+                },
+                xAxis: {
+                    axisTick: {
+                        show: false,
+                    },
+                    axisLabel: {
+                        show: true,
+                        width: 60,
+                        overflow: "truncate",
+                        ellipsis: "...",
+                        color: "#fff",
+                        fontSize: 16,
+                        interval: 0,
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: "#1f3a56",
+                        },
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: "#1f3a56",
+                        },
+                    },
+                    data: xList,
+                },
+                yAxis: [
+                    {
+                        splitLine: {
+                            show: true,
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLabel: {
+                            show: true,
+                            color: "#fff",
+                            fontSize: 16,
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: "#1f3a56",
+                            },
+                        },
+                    },
+                    {
+                        splitLine: {
+                            show: false,
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLabel: {
+                            show: true,
+                            formatter: "{value}%",
+                            color: "#fff",
+                            fontSize: 16,
+                        },
+                        max: 100,
+                    },
+                ],
+                series: [
+                    {
+                        name: "处置数",
+                        type: "bar",
+                        yAxisIndex: 0,
+                        stack: "Search Engine",
+                        z: 3,
+                        barGap: "-100%",
+                        barWidth: "20%",
+                        itemStyle: {
+                            color: "#2158ff",
+                        },
+                        data: yData2,
+                    },
+                    {
+                        name: "未处置数",
+                        type: "bar",
+                        z: 4,
+                        yAxisIndex: 0,
+                        barWidth: "20%",
+                        stack: "Search Engine",
+                        itemStyle: {
+                            color: "#5381fd",
+                        },
+                        data: yData1,
+                    },
+                    {
+                        name: "处置率",
+                        type: "line",
+                        z: 1,
+                        yAxisIndex: 1,
+                        smooth: true,
+                        showSymbol: false,
+                        itemStyle: {
+                            color: "#fed52f",
+                        },
+                        data: yData3,
+                    },
+                ],
+            };
+            let myChart = this.$echarts.init(this.$refs.FXbarContainer);
+            myChart.showLoading({
+                maskColor: "rgba(0, 0, 0, 0)",
+                fontSize: 30,
+                textColor: "#fff",
+            });
+            setTimeout(() => {
+                myChart.hideLoading();
+                myChart.setOption(options);
+            }, 1000);
+        },
     },
 };
 </script>
@@ -270,7 +696,7 @@ export default {
 .aqgl-container {
     display: flex;
     justify-content: space-between;
-    height: calc(100% - 100px);
+    height: calc(100% - 70px);
     padding: 0 20px 20px;
     .child-item {
         // flex: 1;
@@ -362,6 +788,16 @@ export default {
                 left: 0;
                 width: 100%;
                 height: 100%;
+            }
+            .bottom-echarts {
+                width: 100%;
+                height: calc(100% - 350px);
+                display: flex;
+                .bottom-echarts_item {
+                    flex: 1;
+                    .echarts-title {
+                    }
+                }
             }
         }
         .right-top {
