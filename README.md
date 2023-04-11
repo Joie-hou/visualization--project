@@ -49,3 +49,7 @@ See [Configuration Reference](https://echarts.apache.org/zh/index.html).
 
 eslint + prettier
 [基础配置](https://juejin.cn/post/7125207251144409124#heading-10)
+
+stylelint
+[基础配置](https://blog.csdn.net/junjiehou/article/details/128619984)
+[官方文档](http://stylelint.cn/user-guide/rules/)
