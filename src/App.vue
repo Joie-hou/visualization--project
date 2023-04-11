@@ -25,24 +25,28 @@ export default {
 
 <style>
 @import "@/assets/css/public.css";
+
 html,
 body {
-    margin: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    margin: 0;
 }
+
 div {
     box-sizing: border-box;
 }
+
 #app {
-    height: 100%;
     width: 100%;
+    height: 100%;
     font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+    text-align: center;
+    background-color: rgb(3 17 54);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    background-color: rgb(3 17 54);
+
     /* margin-top: 60px; */
 }
 </style>

@@ -709,26 +709,26 @@ export default {
         .animate-card {
             position: relative;
             width: 98%;
+            padding: 10px;
             border: 1px solid #002646;
             box-shadow: 0 0 10px 2px #002646;
-            padding: 10px;
             .check-tag-container {
                 position: absolute;
                 top: 20px;
                 right: 20px;
                 display: flex;
-                justify-content: flex-end;
                 align-items: center;
+                justify-content: flex-end;
                 .check-tag-item {
-                    cursor: pointer;
-                    margin-left: 10px;
                     padding: 10px 20px;
+                    margin-left: 10px;
                     font-size: 17px;
                     color: #fff;
-                    background: radial-gradient(rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.2));
+                    cursor: pointer;
+                    background: radial-gradient(rgb(255 255 255 / 0%) 55%, rgb(255 255 255 / 20%));
                 }
                 .check-tag-active {
-                    background: radial-gradient(rgba(133, 52, 203, 0) 55%, rgba(133, 52, 203, 0.5));
+                    background: radial-gradient(rgb(133 52 203 / 0%) 55%, rgb(133 52 203 / 50%));
                 }
             }
             .table-container {
@@ -754,12 +754,12 @@ export default {
                     .el-table__body-wrapper {
                         .el-table__body {
                             .el-table__row {
-                                background-color: transparent;
-                                color: #fff;
                                 font-size: 16px;
+                                color: #fff;
+                                background-color: transparent;
                                 &:first-child {
-                                    background-color: #1e2b4e;
                                     font-size: 18px;
+                                    background-color: #1e2b4e;
                                     .el-table__cell {
                                         border-bottom: 1px solid #ebeef5;
                                     }
@@ -783,16 +783,16 @@ export default {
             }
             .chart-container {
                 position: absolute;
-                z-index: 0;
                 top: 0;
                 left: 0;
+                z-index: 0;
                 width: 100%;
                 height: 100%;
             }
             .bottom-echarts {
+                display: flex;
                 width: 100%;
                 height: calc(100% - 350px);
-                display: flex;
                 .bottom-echarts_item {
                     flex: 1;
                     .echarts-title {
@@ -803,13 +803,13 @@ export default {
         .right-top {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             .top-left {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
                 align-items: center;
+                justify-content: space-between;
             }
         }
     }
